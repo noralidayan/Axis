@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Crear cuenta · AXIS</title>
+    <link rel="icon" href="img/logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="registro">
+    <header class="topbar">
+        <a class="brand" href="index.html">
+            <img src="img/logo.png" alt="">AXIS
+        </a>
+        <a href="index.html" style="color:#fff;font-size:.9rem">Ya tengo cuenta</a>
+    </header>
+    <main class="reg">
+        <form id="form" class="regcard">
+            <h1>Crear cuenta</h1>
+            <p class="sub">Completá tus datos para agendar turnos. Los campos con * son obligatorios.</p>
+            
+            <fieldset>
+                <legend>Datos personales</legend>
+                <div class="grid2">
+                    <div class="field">
+                        <label for="nombre">Nombre *</label>
+                        <input id="nombre" name="nombre" type="text" required autocomplete="given-name">
+                    </div>
+                    <div class="field">
+                        <label for="apellido">Apellido *</label>
+                        <input id="apellido" name="apellido" type="text" required autocomplete="family-name">
+                    </div>
+                    <div class="field">
+                        <label for="nac">Fecha de nacimiento *</label>
+                        <input id="nac" name="nacimiento" type="date" min="1900-01-01" required>
+                    </div>
+                    <div class="field">
+                        <span class="lbl">Género *</span>
+                        <div class="radios">
+                            <label><input type="radio" name="genero" value="Femenino" required> Femenino</label>
+                            <label><input type="radio" name="genero" value="Masculino"> Masculino</label>
+                            <label><input type="radio" name="genero" value="Otro"> Otro</label>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+            
+            <fieldset>
+                <legend>Contacto</legend>
+                <div class="grid2">
+                    <div class="field">
+                        <label for="email">Correo electrónico *</label>
+                        <input id="email" name="email" type="email" required autocomplete="email" placeholder="nombre@correo.com">
+                    </div>
+                    <div class="field">
+                        <label for="tel">Teléfono *</label>
+                        <input id="tel" name="telefono" type="tel" required pattern="[0-9+\s\-()]{8,}" title="Mínimo 8 números" autocomplete="tel" placeholder="11 5555-0000">
+                    </div>
+                    <div class="field full">
+                        <label for="dir">Dirección (opcional)</label>
+                        <textarea id="dir" name="direccion" rows="2" autocomplete="street-address"></textarea>
+                    </div>
+                </div>
+            </fieldset>
+            
+            <fieldset>
+                <legend>Contraseña</legend>
+                <div class="grid2">
+                    <div class="field">
+                        <label for="pass">Contraseña * (mínimo 8 caracteres)</label>
+                        <div class="pw">
+                            <input id="pass" type="password" minlength="8" required autocomplete="new-password">
+                            <button type="button" class="eye" aria-label="Mostrar contraseña" aria-pressed="false">👁</button>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="pass2">Repetir contraseña *</label>
+                        <div class="pw">
+                            <input id="pass2" type="password" minlength="8" required autocomplete="new-password">
+                            <button type="button" class="eye" aria-label="Mostrar contraseña" aria-pressed="false">👁</button>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+            
+            <p class="err" id="err" role="alert"></p>
+            <button class="btn primary block" type="submit">Crear cuenta</button>
+            <p class="center">Al registrarte aceptás las políticas de privacidad (Ley 25.326/Ley 26.529).</p>
+        </form>
+    </main>
+    <script src="js/app.js"></script>
+</body>
+</html>

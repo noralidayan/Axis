@@ -1,0 +1,97 @@
+{
+  "usuarios": [
+    {
+      "email": "martina.lopez@axis.com.ar",
+      "nombre": "Martina",
+      "apellido": "López",
+      "clave": "Axis2026!",
+      "telefono": "11 5555-0101",
+      "nacimiento": "1994-03-12",
+      "direccion": "Av. Libertador 1200"
+    },
+    {
+      "email": "lucas.benitez@axis.com.ar",
+      "nombre": "Lucas",
+      "apellido": "Benítez",
+      "clave": "lucas12345",
+      "telefono": "11 5555-0202",
+      "nacimiento": "1988-11-30",
+      "direccion": "Belgrano 450"
+    },
+    {
+      "email": "carolina.ruiz@axis.com.ar",
+      "nombre": "Carolina",
+      "apellido": "Ruiz",
+      "clave": "Turnos2026",
+      "telefono": "11 5555-0303",
+      "nacimiento": "2001-07-05",
+      "direccion": ""
+    },
+    {
+      "nombre": "Norali",
+      "apellido": "Dayan",
+      "nacimiento": "1989-01-22",
+      "email": "noralidayan@gmail.com",
+      "telefono": "1133975780",
+      "direccion": "",
+      "clave": "Prueba1234"
+    }
+  ],
+  "turnos": [
+    {
+      "id": 1,
+      "email": "martina.lopez@axis.com.ar",
+      "profesional_id": 1,
+      "profesional": "Dr. Ramiro Sánchez",
+      "especialidad": "Clínica médica",
+      "centro": "Clínica del Sol",
+      "fecha": "2026-11-02",
+      "hora": "10:30",
+      "estado": "Confirmado"
+    },
+    {
+      "id": 2,
+      "email": "martina.lopez@axis.com.ar",
+      "profesional_id": 2,
+      "profesional": "Dra. Laura Méndez",
+      "especialidad": "Odontología",
+      "centro": "Clínica del Sol",
+      "fecha": "2026-11-09",
+      "hora": "15:00",
+      "estado": "Pendiente"
+    },
+    {
+      "id": 3,
+      "email": "martina.lopez@axis.com.ar",
+      "profesional_id": 3,
+      "profesional": "Dr. Juan Pérez",
+      "especialidad": "Endocrinología",
+      "centro": "Clínica del Sol",
+      "fecha": "2026-10-10",
+      "hora": "11:00",
+      "estado": "Realizado"
+    },
+    {
+      "id": 4,
+      "email": "lucas.benitez@axis.com.ar",
+      "profesional_id": 5,
+      "profesional": "Dr. Martín Gallo",
+      "especialidad": "Cardiología",
+      "centro": "Clínica del Sol",
+      "fecha": "2026-11-04",
+      "hora": "09:30",
+      "estado": "Confirmado"
+    },
+    {
+      "id": 5,
+      "email": "noralidayan@gmail.com",
+      "profesional_id": 6,
+      "profesional": "Dra. Ana Torres",
+      "especialidad": "Dermatología",
+      "centro": "Clínica del Sol",
+      "fecha": "2026-11-19",
+      "hora": "16:00",
+      "estado": "Pendiente"
+    }
+  ]
+}

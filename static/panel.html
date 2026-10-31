@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Inicio · AXIS</title>
+    <link rel="icon" href="img/logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="panel">
+    <header class="topbar">
+        <a class="brand" href="panel.html">
+            <img src="img/logo.png" alt="">AXIS
+        </a>
+        <div class="user">
+            <div class="avatar" id="av"></div>
+            <span class="n" id="un"></span>
+            <a href="index.html" id="salir" style="color:#fff;font-size:.8rem;margin-left:.8rem">Salir</a>
+        </div>
+    </header>
+    <div class="layout">
+        <aside class="sidebar">
+            <div>
+                <h2>PACIENTE</h2>
+                <nav aria-label="Principal">
+                    <a href="panel.html" class="active" aria-current="page"><span aria-hidden="true">▦</span>Inicio</a>
+                    <a href="nuevo-turno.html"><span aria-hidden="true">＋</span>Nuevo turno</a>
+                    <a href="mis-turnos.html"><span aria-hidden="true">▤</span>Mis turnos</a>
+                    <a href="perfil.html"><span aria-hidden="true">☺</span>Mi perfil</a>
+                    <a href="https://wa.me/5491100000000?text=Hola%20AXIS%2C%20quiero%20agendar%20un%20turno" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">💬</span>Chatbot WA</a>
+                </nav>
+            </div>
+            <footer>
+                © 2026 AXIS — Todos los derechos reservados<br>
+                Plataforma protegida bajo Ley 25.326
+            </footer>
+        </aside>
+        <main class="main">
+            <section class="hero">
+                <div>
+                    <small>Buen día,</small>
+                    <h2 id="nombre">&nbsp;</h2>
+                    <span class="q">¿Necesitás un turno médico hoy?</span>
+                </div>
+                <a class="btn primary" href="nuevo-turno.html">📅 Agendar turno</a>
+            </section>
+            <section class="stats">
+                <div class="stat">
+                    <b id="n-prox">–</b>Turnos próximos
+                </div>
+                <div class="stat">
+                    <b id="n-real">–</b>Turnos realizados
+                </div>
+                <div class="stat">
+                    <b id="n-rec">–</b>Recordatorio activo
+                </div>
+            </section>
+            <section class="panel">
+                <header>
+                    <span>Próximos turnos</span>
+                    <a href="mis-turnos.html">Ver todos</a>
+                </header>
+                <div id="lista"></div>
+            </section>
+            <a class="wa" href="https://wa.me/5491100000000?text=Hola%20AXIS%2C%20quiero%20agendar%20un%20turno" target="_blank" rel="noopener noreferrer">
+                <img class="ico" src="img/whatsapp.png" alt="WhatsApp">
+                <span style="flex:1">
+                    <b>Agendá por WhatsApp</b>
+                    <small>Escribinos y el chatbot te asigna un turno en segundos</small>
+                </span>
+                →
+            </a>
+        </main>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+</html>

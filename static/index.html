@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+    <head><meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Iniciar sesión · AXIS</title><link rel="icon" href="img/logo.png">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+<body data-page="login">
+    <header class="topbar" style="padding:1.1rem">
+    </header>
+<main class="login">
+    <section class="left">
+        <div>
+            <div class="brand">
+                <img src="img/logo.png" alt="">AXIS</div><small>El centro de tu operación inteligente</small>
+            </div>
+        <h2>Gestioná tu salud desde cualquier lugar</h2>
+        <p style="font-size:.85rem">Agendá turnos, recibí recordatorios y seguí tu atención médica de forma simple y segura.</p>
+        <ul>
+            <li>✓ Turnos en segundos por WhatsApp o web</li>
+            <li>✓ Recordatorios automáticos antes del turno</li>
+            <li>✓ Datos protegidos bajo Ley 25.326</li>
+        </ul>
+    </section>
+    <section class="right"><form id="form" novalidate>
+        <h1 style="margin:0">Bienvenido/a</h1><small>Ingresá con tu cuenta Axis</small>
+        <p class="okmsg" id="msg" role="status"></p>
+        <div class="field"><label for="email">Correo electrónico</label>
+            <input id="email" type="email" placeholder="nombre@correo.com" autocomplete="username">
+        </div>
+        <div class="field"><label for="pass">Contraseña</label>
+            <div class="pw">
+                <input id="pass" type="password" placeholder="Mínimo 8 caracteres" autocomplete="current-password"><button type="button" class="eye" aria-label="Mostrar contraseña" aria-pressed="false">👁</button>
+            </div>
+        </div>
+            <div class="opts"><label><input type="checkbox" id="rec"> Recordarme</label><a href="#">¿Olvidaste tu contraseña?</a>
+            </div>
+        <p class="err" id="err" role="alert"></p><button class="btn primary block" type="submit">Iniciar sesión</button>
+        <p class="center">¿No tenés cuenta? <a href="registro.html">Registrate</a></p>
+        <details class="demo"><summary>Cuentas de prueba</summary>
+        <p>martina.lopez@axis.com.ar — Axis2026!
+            <br>lucas.benitez@axis.com.ar — lucas12345
+            <br>carolina.ruiz@axis.com.ar — Turnos2026</p></details></form>
+        <div class="legal">🛡 Al ingresar aceptás las políticas de privacidad y el consentimiento informado (Ley 25.326/Ley 26.529)
+        </div>
+    </section>
+</main>
+<script src="js/app.js">
+
+</script>
+</body>
+</html>
+
