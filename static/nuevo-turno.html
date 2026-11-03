@@ -1,78 +1,126 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html lang="es">
 <head>
+    <!-- Configuración general del documento -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Nuevo turno · AXIS</title>
+
+    <!-- Ícono que aparece en la pestaña del navegador -->
     <link rel="icon" href="img/logo.png">
+
+    <!-- Fuente utilizada en toda la plataforma -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Hoja de estilos principal -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
+
+<!-- data-page permite identificar qué página está abierta desde JavaScript -->
 <body data-page="nuevo">
+
+    <!-- Barra superior con el logo y los datos del usuario -->
     <header class="topbar">
         <a class="brand" href="panel.html">
             <img src="img/logo.png" alt="">AXIS
         </a>
+
         <div class="user">
+            <!-- El avatar y el nombre se completan desde JavaScript -->
             <div class="avatar" id="av"></div>
             <span class="n" id="un"></span>
+
+            <!-- Enlace para cerrar la sesión y volver al inicio -->
             <a href="index.html" id="salir" style="color:#fff;font-size:.8rem;margin-left:.8rem">Salir</a>
         </div>
     </header>
+
     <div class="layout">
+
+        <!-- Menú lateral de navegación del paciente -->
         <aside class="sidebar">
             <div>
                 <h2>PACIENTE</h2>
+
                 <nav aria-label="Principal">
                     <a href="panel.html"><span aria-hidden="true">▦</span>Inicio</a>
+
+                    <!-- active indica visualmente cuál es la sección actual -->
                     <a href="nuevo-turno.html" class="active" aria-current="page"><span aria-hidden="true">＋</span>Nuevo turno</a>
+
                     <a href="mis-turnos.html"><span aria-hidden="true">▤</span>Mis turnos</a>
                     <a href="perfil.html"><span aria-hidden="true">☺</span>Mi perfil</a>
+
+                    <!-- Abre una conversación de WhatsApp en una pestaña nueva -->
                     <a href="https://wa.me/5491100000000?text=Hola%20AXIS%2C%20quiero%20agendar%20un%20turno" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">💬</span>Chatbot WA</a>
                 </nav>
             </div>
+
+            <!-- Información institucional y legal -->
             <footer>
                 © 2026 AXIS — Todos los derechos reservados<br>
                 Plataforma protegida bajo Ley 25.326
             </footer>
         </aside>
+
+        <!-- Contenido principal de la página -->
         <main class="main">
+
+            <!-- Título de la sección y acceso para volver al panel -->
             <h1><a href="panel.html" aria-label="Volver">←</a> Agendar nuevo turno</h1>
-            
+
+            <!-- Indicadores de las etapas del proceso de agendamiento -->
             <div class="steps" aria-hidden="true">
                 <div class="step"><i>1</i>Especialidad</div>
                 <div class="step"><i>2</i>Profesional</div>
                 <div class="step"><i>3</i>Horario</div>
                 <div class="step"><i>4</i>Confirmar</div>
             </div>
-            
+
+            <!-- Primer paso: selección de la especialidad médica -->
+            <!-- Las opciones se cargan dinámicamente desde JavaScript -->
             <label class="block-title" for="esp">Especialidad</label>
             <select id="esp" class="sel"></select>
-            
+
+            <!-- Segundo paso: selección del profesional -->
+            <!-- Se muestra una vez seleccionada la especialidad -->
             <div id="s-prof" class="hidden">
                 <label class="block-title" for="prof">Profesional</label>
                 <select id="prof" class="sel"></select>
             </div>
-            
+
+            <!-- Tercer paso: selección de fecha y horario -->
+            <!-- Esta sección se habilita después de elegir un profesional -->
             <div id="s-fecha" class="hidden">
                 <p class="block-title">Seleccioná una fecha disponible</p>
+
+                <!-- Calendario para consultar y seleccionar fechas -->
                 <div class="cal">
                     <div class="cal-head">
                         <button id="prev" aria-label="Mes anterior">‹</button>
                         <span id="mes"></span>
                         <button id="next" aria-label="Mes siguiente">›</button>
                     </div>
+
+                    <!-- JavaScript genera los días del calendario dentro de este contenedor -->
                     <div class="grid7" id="dias"></div>
                 </div>
+
+                <!-- Muestra los horarios disponibles para la fecha seleccionada -->
                 <p class="block-title" id="h-tit"></p>
                 <div class="slots" id="slots"></div>
             </div>
-            
+
+            <!-- Botón para avanzar al siguiente paso del agendamiento -->
+            <!-- JavaScript controla cuándo se habilita la opción de continuar -->
             <div class="actions">
                 <a class="btn dark" id="cont" href="#" aria-disabled="true">Continuar →</a>
             </div>
         </main>
     </div>
+
+    <!-- Archivo JavaScript que controla la lógica del agendamiento -->
     <script src="js/app.js"></script>
 </body>
 </html>
