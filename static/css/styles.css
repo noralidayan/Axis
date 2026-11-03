@@ -1,3 +1,5 @@
+
+/* Variables globales: permiten mantener los mismos colores y la misma tipografía en toda la plataforma */
 :root {
   --navy: #0b2a4a;
   --sky: #d9f1ff;
@@ -10,11 +12,13 @@
   --line: #8a97a3;
   --font: "Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
 }
- 
+
+/* Aplica el cálculo del tamaño de los elementos incluyendo el padding y el borde */
 * {
   box-sizing: border-box;
 }
- 
+
+/* Configuración general de la página */
 body {
   margin: 0;
   font-family: var(--font);
@@ -24,17 +28,20 @@ body {
   display: flex;
   flex-direction: column;
 }
- 
+
+/* Estilo general de los enlaces */
 a {
   color: var(--blue);
   text-decoration: none;
 }
- 
+
+/* Resalta los elementos cuando se navega utilizando el teclado */
 :focus-visible {
   outline: 3px solid var(--teal);
   outline-offset: 2px;
 }
- 
+
+/* Logo y nombre de AXIS */
 .brand {
   display: flex;
   align-items: center;
@@ -44,12 +51,14 @@ a {
   letter-spacing: .08em;
   font-size: 1.25rem;
 }
- 
+
+/* Tamaño de la imagen del logo */
 .brand img {
   width: 34px;
   height: 34px;
 }
- 
+
+/* Barra superior de navegación */
 .topbar {
   background: var(--navy);
   color: #fff;
@@ -58,14 +67,16 @@ a {
   justify-content: space-between;
   padding: .7rem 1.5rem;
 }
- 
+
+/* Contenedor de los datos del usuario en la barra superior */
 .user {
   display: flex;
   align-items: center;
   gap: .6rem;
   font-weight: 600;
 }
- 
+
+/* Avatar circular del usuario */
 .avatar {
   background: var(--blue);
   color: #fff;
@@ -77,13 +88,15 @@ a {
   font-size: .8rem;
   font-weight: 700;
 }
- 
+
+/* Distribuye el menú lateral y el contenido principal en dos columnas */
 .layout {
   display: grid;
   grid-template-columns: 230px 1fr;
   flex: 1;
 }
- 
+
+/* Menú lateral de navegación */
 .sidebar {
   background: var(--steel);
   padding: 1.5rem 0 1rem;
@@ -91,13 +104,15 @@ a {
   flex-direction: column;
   justify-content: space-between;
 }
- 
+
+/* Título que identifica la sección del menú lateral */
 .sidebar h2 {
   font-size: .95rem;
   margin: 0 1.5rem 1rem;
   letter-spacing: .05em;
 }
- 
+
+/* Distribución y apariencia de las opciones del menú */
 .sidebar nav a {
   display: flex;
   gap: .7rem;
@@ -106,35 +121,41 @@ a {
   color: var(--ink);
   font-size: .9rem;
 }
- 
+
+/* Diferencia visualmente la opción correspondiente a la página actual */
 .sidebar nav a.active {
   background: #fff;
   font-weight: 600;
   border: 1px solid var(--ink);
   margin-right: -1px;
 }
- 
+
+/* Cambia el fondo de las opciones al pasar el cursor */
 .sidebar nav a:hover {
   background: #ffffff80;
 }
- 
+
+/* Información institucional ubicada al pie del menú lateral */
 .sidebar footer {
   font-size: .65rem;
   padding: 0 1.5rem;
   line-height: 1.5;
 }
- 
+
+/* Área donde se muestra el contenido de cada página */
 .main {
   padding: 1.5rem;
   max-width: 960px;
   width: 100%;
 }
- 
+
+/* Título principal de las páginas */
 .main h1 {
   font-size: 1.35rem;
   margin: 0 0 1rem;
 }
- 
+
+/* Panel destacado de bienvenida en la página de inicio */
 .hero {
   background: var(--navy);
   color: #fff;
@@ -146,20 +167,24 @@ a {
   gap: 1rem;
   flex-wrap: wrap;
 }
- 
+
+/* Texto introductorio del panel de bienvenida */
 .hero small {
   display: block;
 }
- 
+
+/* Nombre del paciente en el panel de bienvenida */
 .hero h2 {
   margin: .2rem 0;
 }
- 
+
+/* Texto secundario del panel de bienvenida */
 .hero .q {
   color: var(--teal);
   font-size: .9rem;
 }
- 
+
+/* Estilo general de los botones */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -173,40 +198,47 @@ a {
   font: 600 .9rem var(--font);
   cursor: pointer;
 }
- 
+
+/* Botón principal, utilizado para destacar las acciones más importantes */
 .btn.primary {
   background: var(--blue);
   border-color: var(--blue);
   color: #fff;
 }
- 
+
+/* Variante oscura del botón */
 .btn.dark {
   background: var(--navy);
   border-color: var(--navy);
   color: #fff;
 }
- 
+
+/* Variante para acciones que pueden tener consecuencias, como cancelar un turno */
 .btn.danger {
   border-color: var(--red);
   color: var(--red);
 }
- 
+
+/* Hace que el botón ocupe todo el ancho disponible */
 .btn.block {
   width: 100%;
 }
- 
+
+/* Atenúa los botones que no están disponibles para la interacción */
 .btn[aria-disabled=true] {
   opacity: .45;
   pointer-events: none;
 }
- 
+
+/* Distribuye las tarjetas con los indicadores del resumen del paciente */
 .stats {
   display: grid;
   grid-template-columns: repeat(3,1fr);
   gap: 1rem;
   margin: 1.2rem 0;
 }
- 
+
+/* Apariencia de cada tarjeta de estadísticas */
 .stat {
   background: var(--steel);
   border-radius: 12px;
@@ -214,19 +246,22 @@ a {
   text-align: center;
   font-size: .9rem;
 }
- 
+
+/* Destaca el número mostrado en cada indicador */
 .stat b {
   display: block;
   font-size: 1.6rem;
 }
- 
+
+/* Contenedor general de información, utilizado en distintas secciones */
 .panel {
   background: var(--sky);
   border: 1.5px solid var(--ink);
   border-radius: 12px;
   overflow: hidden;
 }
- 
+
+/* Encabezado de los paneles */
 .panel>header {
   display: flex;
   justify-content: space-between;
@@ -235,7 +270,8 @@ a {
   border-bottom: 1.5px solid var(--ink);
   font-size: .9rem;
 }
- 
+
+/* Fila de información, utilizada por ejemplo para mostrar turnos */
 .row {
   display: flex;
   justify-content: space-between;
@@ -244,16 +280,19 @@ a {
   padding: .9rem 1rem;
   border-bottom: 1px solid #9bb4c4;
 }
- 
+
+/* Quita el borde inferior de la última fila */
 .row:last-child {
   border: 0;
 }
- 
+
+/* Texto secundario dentro de cada fila */
 .row small {
   color: #42566a;
   display: block;
 }
- 
+
+/* Etiquetas que muestran el estado de un turno */
 .badge {
   padding: .35rem .9rem;
   border-radius: 8px;
@@ -262,23 +301,25 @@ a {
   background: var(--steel);
   white-space: nowrap;
 }
- 
+
+/* Colores para diferenciar visualmente los distintos estados de los turnos */
 .badge.Confirmado {
   color: #0e8a7d;
 }
- 
+
 .badge.Pendiente {
   color: #b86e00;
 }
- 
+
 .badge.Cancelado {
   color: var(--red);
 }
- 
+
 .badge.Realizado {
   color: #42566a;
 }
- 
+
+/* Acceso directo al canal de atención por WhatsApp */
 .wa {
   display: flex;
   align-items: center;
@@ -290,7 +331,8 @@ a {
   margin-top: 1rem;
   color: var(--ink);
 }
- 
+
+/* Ícono de WhatsApp dentro del acceso directo */
 .wa .ico {
   background: #25d366;
   color: #fff;
@@ -301,18 +343,21 @@ a {
   place-items: center;
   font-weight: 700;
 }
- 
+
+/* Texto secundario del acceso a WhatsApp */
 .wa small {
   display: block;
   color: #42566a;
 }
- 
+
+/* Indicadores de las etapas del proceso de reserva de un turno */
 .steps {
   display: flex;
   gap: .5rem;
   margin-bottom: 1.2rem;
 }
- 
+
+/* Apariencia de cada etapa del proceso */
 .step {
   flex: 1;
   text-align: center;
@@ -321,7 +366,8 @@ a {
   border-bottom: 2px solid var(--line);
   padding-bottom: .4rem;
 }
- 
+
+/* Número que identifica cada etapa */
 .step i {
   display: grid;
   place-items: center;
@@ -333,33 +379,38 @@ a {
   font-style: normal;
   color: var(--ink);
 }
- 
+
+/* Marca la etapa que se está realizando */
 .step.on {
   border-color: var(--blue);
 }
- 
+
 .step.on i {
   background: var(--blue);
   color: #fff;
 }
- 
+
+/* Marca las etapas que ya fueron completadas */
 .step.done i {
   background: var(--teal);
   color: #fff;
 }
- 
+
+/* Títulos secundarios utilizados para separar secciones de contenido */
 .block-title {
   font-size: .85rem;
   margin: 1.2rem 0 .5rem;
   color: #42566a;
 }
- 
+
+/* Contenedor flexible para agrupar opciones */
 .chips {
   display: flex;
   flex-wrap: wrap;
   gap: .6rem;
 }
- 
+
+/* Botones de selección, por ejemplo para elegir una especialidad o profesional */
 .chip {
   border: 1.5px solid var(--ink);
   background: #fff;
@@ -369,24 +420,28 @@ a {
   cursor: pointer;
   text-align: left;
 }
- 
+
+/* Diferencia la opción que fue seleccionada */
 .chip.sel {
   background: var(--blue);
   border-color: var(--blue);
   color: #fff;
 }
- 
+
+/* Texto secundario dentro de las opciones */
 .chip small {
   display: block;
   font-weight: 400;
 }
- 
+
+/* Contenedor principal del calendario */
 .cal {
   border: 1.5px solid var(--ink);
   border-radius: 14px;
   padding: 1rem;
 }
- 
+
+/* Encabezado del calendario, con el mes y los controles de navegación */
 .cal-head {
   display: flex;
   justify-content: space-between;
@@ -394,7 +449,8 @@ a {
   margin-bottom: .6rem;
   font-weight: 600;
 }
- 
+
+/* Botones para cambiar de mes */
 .cal-head button {
   border: 0;
   background: none;
@@ -402,19 +458,22 @@ a {
   cursor: pointer;
   padding: .2rem .7rem;
 }
- 
+
+/* Distribuye los días del calendario en siete columnas */
 .grid7 {
   display: grid;
   grid-template-columns: repeat(7,1fr);
   gap: .3rem;
   text-align: center;
 }
- 
+
+/* Nombres de los días de la semana */
 .grid7 b {
   font-size: .8rem;
   padding: .3rem;
 }
- 
+
+/* Apariencia de cada día del calendario */
 .day {
   border: 0;
   background: none;
@@ -426,24 +485,28 @@ a {
   font: 500 .9rem var(--font);
   cursor: pointer;
 }
- 
+
+/* Días que no pueden seleccionarse */
 .day:disabled {
   color: #9aa6b0;
   cursor: not-allowed;
 }
- 
+
+/* Día seleccionado en el calendario */
 .day.sel {
   background: var(--blue);
   color: #fff;
   font-weight: 700;
 }
- 
+
+/* Contenedor de los horarios disponibles */
 .slots {
   display: flex;
   flex-wrap: wrap;
   gap: .6rem;
 }
- 
+
+/* Botón correspondiente a cada horario */
 .slot {
   border: 1.5px solid var(--ink);
   background: #fff;
@@ -452,31 +515,36 @@ a {
   font: 600 .9rem var(--font);
   cursor: pointer;
 }
- 
+
+/* Horario seleccionado */
 .slot.sel {
   background: var(--blue);
   color: #fff;
   border-color: var(--navy);
 }
- 
+
+/* Contenedor de botones de acción */
 .actions {
   display: flex;
   justify-content: flex-end;
   gap: .8rem;
   margin-top: 1.2rem;
 }
- 
+
+/* Oculta elementos que no deben mostrarse en ese momento */
 .hidden {
   display: none!important;
 }
- 
+
+/* Resumen de los datos seleccionados antes de confirmar una acción */
 .summary {
   background: #fff;
   border: 1.5px solid var(--navy);
   border-radius: 12px;
   overflow: hidden;
 }
- 
+
+/* Encabezado del resumen */
 .summary>h3 {
   margin: 0;
   background: var(--navy);
@@ -484,7 +552,8 @@ a {
   padding: .7rem 1rem;
   font-size: .85rem;
 }
- 
+
+/* Distribuye los datos del resumen en dos columnas */
 .summary dl {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -492,17 +561,20 @@ a {
   padding: 1rem;
   margin: 0;
 }
- 
+
+/* Descripción de cada dato del resumen */
 .summary dt {
   font-size: .75rem;
   color: #42566a;
 }
- 
+
+/* Valor correspondiente a cada dato */
 .summary dd {
   margin: 0;
   font-weight: 700;
 }
- 
+
+/* Recuadro para mostrar información o aclaraciones al paciente */
 .info {
   background: #fff;
   border: 1.5px solid var(--ink);
@@ -513,7 +585,8 @@ a {
   display: flex;
   gap: .7rem;
 }
- 
+
+/* Recuadro para organizar información y opciones de recordatorio */
 .remind {
   background: var(--sky);
   border: 1px solid var(--teal);
@@ -526,7 +599,8 @@ a {
   font-size: .85rem;
   line-height: 1.6;
 }
- 
+
+/* Contenedor de las pestañas para filtrar o cambiar la vista de los turnos */
 .tabs {
   display: flex;
   gap: .6rem;
@@ -534,7 +608,8 @@ a {
   flex-wrap: wrap;
   align-items: center;
 }
- 
+
+/* Apariencia de cada pestaña */
 .tab {
   border: 0;
   background: var(--steel);
@@ -543,12 +618,14 @@ a {
   font: 600 .85rem var(--font);
   cursor: pointer;
 }
- 
+
+/* Diferencia visualmente la pestaña seleccionada */
 .tab.on {
   background: var(--navy);
   color: #fff;
 }
- 
+
+/* Tarjeta individual utilizada para mostrar la información de un turno */
 .tcard {
   background: var(--sky);
   border: 1.5px solid var(--ink);
@@ -556,11 +633,13 @@ a {
   padding: 1rem;
   margin-bottom: 1rem;
 }
- 
+
+/* Título de cada tarjeta de turno */
 .tcard h3 {
   margin: 0;
 }
- 
+
+/* Distribuye los datos del turno, como fecha, hora y profesional */
 .tcard .meta {
   display: flex;
   gap: 1.2rem;
@@ -568,46 +647,54 @@ a {
   margin: .7rem 0;
   font-size: .9rem;
 }
- 
+
+/* Organiza el encabezado de la tarjeta y el estado del turno */
 .tcard .head {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
   align-items: flex-start;
 }
- 
+
+/* Mensajes informativos que acompañan las tarjetas de turno */
 .note {
   border-radius: 10px;
   padding: .7rem 1rem;
   font-size: .85rem;
   margin-bottom: .8rem;
 }
- 
+
+/* Estilo para mensajes de información positiva */
 .note.ok {
   background: #aeeaea;
 }
- 
+
+/* Estilo para mensajes de advertencia */
 .note.warn {
   background: #ddd6c4;
 }
- 
+
+/* Contenedor de botones disponibles para cada turno */
 .tcard .btns {
   display: flex;
   gap: .8rem;
   flex-wrap: wrap;
 }
- 
+
+/* Distribuye los botones para que aprovechen el espacio disponible */
 .tcard .btns>* {
   flex: 1;
   min-width: 140px;
 }
- 
+
+/* Mensaje que se muestra cuando no hay información para listar */
 .empty {
   text-align: center;
   padding: 2rem;
   color: #42566a;
 }
- 
+
+/* Mensaje emergente que aparece en la parte inferior de la pantalla */
 #toast {
   position: fixed;
   bottom: 1.2rem;
@@ -620,13 +707,15 @@ a {
   font-size: .9rem;
   z-index: 9;
 }
- 
+
+/* Distribución en dos columnas de la pantalla de inicio de sesión */
 .login {
   display: grid;
   grid-template-columns: 1fr 1fr;
   flex: 1;
 }
- 
+
+/* Panel izquierdo del inicio de sesión, con información de AXIS */
 .login .left {
   padding: 3rem 15%;
   display: flex;
@@ -634,34 +723,40 @@ a {
   justify-content: center;
   gap: 1rem;
 }
- 
+
+/* Logo de AXIS en la pantalla de inicio de sesión */
 .login .left .brand {
   color: var(--navy);
   font-size: 2.6rem;
 }
- 
+
+/* Tamaño ampliado del logo en esa pantalla */
 .login .left .brand img {
   width: 64px;
   height: 64px;
 }
- 
+
+/* Texto secundario del panel izquierdo */
 .login .left small {
   color: var(--navy);
   font-size: .7rem;
 }
- 
+
+/* Título del formulario de inicio de sesión */
 .login h2 {
   margin: 2rem 0 0;
   font-size: 1.25rem;
 }
- 
+
+/* Lista de información presentada en el panel izquierdo */
 .login ul {
   list-style: none;
   padding: 0;
   font-size: .85rem;
   line-height: 1.7;
 }
- 
+
+/* Panel derecho donde se encuentra el formulario de inicio de sesión */
 .login .right {
   background: var(--steel);
   padding: 3rem 15%;
@@ -669,17 +764,20 @@ a {
   flex-direction: column;
   justify-content: center;
 }
- 
+
+/* Espaciado general de los campos de los formularios */
 .field {
   margin: .8rem 0;
 }
- 
+
+/* Etiquetas que identifican cada campo */
 .field label {
   font-size: .85rem;
   display: block;
   margin-bottom: .3rem;
 }
- 
+
+/* Apariencia de los campos de texto, listas desplegables y áreas de texto */
 .field input:not([type=radio]):not([type=checkbox]),
 .field select,
 .field textarea {
@@ -690,7 +788,8 @@ a {
   background: #d4dce7;
   font: 1rem var(--font);
 }
- 
+
+/* Opciones complementarias de los formularios, como recordar sesión o recuperar contraseña */
 .opts {
   display: flex;
   justify-content: space-between;
@@ -699,13 +798,15 @@ a {
   flex-wrap: wrap;
   gap: .4rem;
 }
- 
+
+/* Estilo de los mensajes de error de los formularios */
 .err {
   color: var(--red);
   font-size: .85rem;
   min-height: 1.2em;
 }
- 
+
+/* Recuadro con información legal */
 .legal {
   background: #fff;
   border-radius: 14px;
@@ -715,94 +816,115 @@ a {
   text-align: center;
   box-shadow: 0 4px 14px #0003;
 }
- 
+
+/* Centra el texto y establece su tamaño */
 .center {
   text-align: center;
   font-size: .85rem;
   margin-top: 1rem;
 }
- 
+
+/* Ajustes de diseño para pantallas de hasta 820px de ancho */
 @media (max-width: 820px) {
+  /* El inicio de sesión pasa a mostrarse en una sola columna */
   .login {
     grid-template-columns: 1fr;
   }
- 
+
+  /* Reduce los espacios laterales de los paneles de inicio de sesión */
   .login .left,
   .login .right {
     padding: 2rem 1.5rem;
   }
- 
+
+  /* El menú lateral pasa a ubicarse por encima del contenido */
   .layout {
     grid-template-columns: 1fr;
   }
- 
+
+  /* El menú se adapta al ancho de la pantalla */
   .sidebar {
     padding: 0;
   }
- 
+
+  /* Oculta el título y el pie del menú lateral en pantallas pequeñas */
   .sidebar h2,
   .sidebar footer {
     display: none;
   }
- 
+
+  /* Muestra las opciones de navegación en una fila desplazable */
   .sidebar nav {
     display: flex;
     overflow-x: auto;
   }
- 
+
+  /* Ajusta el espacio de las opciones del menú */
   .sidebar nav a {
     padding: .8rem 1rem;
     white-space: nowrap;
   }
- 
+
+  /* Elimina el margen adicional de la opción activa */
   .sidebar nav a.active {
     margin: 0;
   }
- 
+
+  /* Muestra las tarjetas de estadísticas una debajo de otra */
   .stats {
     grid-template-columns: 1fr;
   }
- 
+
+  /* Los resúmenes y recordatorios pasan a una sola columna */
   .summary dl,
   .remind {
     grid-template-columns: 1fr;
   }
- 
+
+  /* Reduce el tamaño del texto de las etapas del proceso */
   .step {
     font-size: .7rem;
   }
- 
+
+  /* Permite que el contenido de las filas se acomode en varias líneas */
   .row {
     flex-wrap: wrap;
   }
- 
+
+  /* Los botones de acción comparten el espacio disponible */
   .actions .btn {
     flex: 1;
   }
- 
+
+  /* Reduce el espacio interno de la barra superior */
   .topbar {
     padding: .7rem 1rem;
   }
- 
+
+  /* Oculta el nombre del usuario para ahorrar espacio */
   .user span.n {
     display: none;
   }
 }
- 
+
+/* Aplica un pequeño efecto al presionar los botones si el usuario no tiene activada la reducción de movimiento */
 @media (prefers-reduced-motion: no-preference) {
   .btn:active {
     transform: scale(.97);
   }
 }
- 
+
+/* Contenedor del campo de contraseña y su botón para mostrar u ocultar el contenido */
 .pw {
   position: relative;
 }
- 
+
+/* Deja espacio a la derecha para ubicar el botón del ojo */
 .pw input {
   padding-right: 3rem!important;
 }
- 
+
+/* Botón que permite mostrar u ocultar la contraseña */
 .eye {
   position: absolute;
   right: .4rem;
@@ -814,29 +936,34 @@ a {
   cursor: pointer;
   padding: .4rem .6rem;
 }
- 
+
+/* Mensaje que se muestra cuando una operación se realiza correctamente */
 .okmsg {
   color: #0e7a4a;
   font-size: .85rem;
   font-weight: 600;
   margin: .6rem 0 0;
 }
- 
+
+/* Oculta el mensaje de éxito cuando no contiene texto */
 .okmsg:empty {
   display: none;
 }
- 
+
+/* Texto con datos de acceso o información de prueba */
 .demo {
   margin-top: 1rem;
   font-size: .78rem;
   color: #33475b;
 }
- 
+
+/* Espaciado y altura de línea de la información de prueba */
 .demo p {
   line-height: 1.7;
   margin: .4rem 0;
 }
- 
+
+/* Estilo de las listas desplegables con esta clase */
 select.sel {
   width: 100%;
   max-width: 440px;
@@ -847,18 +974,21 @@ select.sel {
   font: 600 .95rem var(--font);
   color: var(--ink);
 }
- 
+
+/* Hace que los títulos de sección se comporten como elementos de bloque cuando se usan como etiquetas */
 label.block-title {
   display: block;
 }
- 
+
+/* Contenedor principal de la pantalla de registro */
 .reg {
   flex: 1;
   display: flex;
   justify-content: center;
   padding: 1.5rem 1rem;
 }
- 
+
+/* Tarjeta que contiene el formulario de registro */
 .regcard {
   background: #fff;
   border-radius: 16px;
@@ -868,47 +998,55 @@ label.block-title {
   height: fit-content;
   box-shadow: 0 4px 18px #0b2a4a22;
 }
- 
+
+/* Título del formulario de registro */
 .regcard h1 {
   margin: 0;
   font-size: 1.4rem;
 }
- 
+
+/* Texto secundario que acompaña el título del registro */
 .sub {
   color: #42566a;
   font-size: .88rem;
   margin: .3rem 0 1rem;
 }
- 
+
+/* Agrupa campos relacionados dentro del formulario */
 fieldset {
   border: 1.5px solid var(--steel);
   border-radius: 12px;
   margin: 0 0 1rem;
   padding: .4rem 1rem 1rem;
 }
- 
+
+/* Título de cada grupo de campos */
 legend {
   font-weight: 700;
   font-size: .9rem;
   padding: 0 .4rem;
 }
- 
+
+/* Distribuye los campos del formulario en dos columnas */
 .grid2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0 1rem;
 }
- 
+
+/* Permite que un campo ocupe las dos columnas */
 .grid2 .full {
   grid-column: 1/-1;
 }
- 
+
+/* Estilo de las etiquetas de los campos */
 .lbl {
   display: block;
   font-size: .85rem;
   margin-bottom: .3rem;
 }
- 
+
+/* Distribución de las opciones de selección, por ejemplo, botones de opción */
 .radios {
   display: flex;
   gap: 1rem;
@@ -916,19 +1054,22 @@ legend {
   padding-top: .5rem;
   font-size: .9rem;
 }
- 
+
+/* Alinea cada opción con su botón de selección */
 .radios label {
   margin: 0;
   display: flex;
   gap: .3rem;
   align-items: center;
 }
- 
+
+/* Permite modificar el tamaño vertical de las áreas de texto */
 textarea {
   resize: vertical;
   font-family: var(--font);
 }
- 
+
+/* En pantallas pequeñas, los campos del formulario de registro pasan a una sola columna */
 @media (max-width: 820px) {
   .grid2 {
     grid-template-columns: 1fr;

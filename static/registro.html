@@ -1,42 +1,68 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html lang="es">
 <head>
+    <!-- Configuración general del documento -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Crear cuenta · AXIS</title>
+
+    <!-- Ícono que aparece en la pestaña del navegador -->
     <link rel="icon" href="img/logo.png">
+
+    <!-- Fuente utilizada en toda la plataforma -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Hoja de estilos principal -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
+
+<!-- Identifica la página actual para que JavaScript ejecute la lógica correspondiente -->
 <body data-page="registro">
+
+    <!-- Barra superior con el logo y el acceso para quienes ya tienen una cuenta -->
     <header class="topbar">
         <a class="brand" href="index.html">
             <img src="img/logo.png" alt="">AXIS
         </a>
+
+        <!-- Permite volver a la pantalla de inicio de sesión -->
         <a href="index.html" style="color:#fff;font-size:.9rem">Ya tengo cuenta</a>
     </header>
+
+    <!-- Contenedor principal del formulario de registro -->
     <main class="reg">
+
+        <!-- Formulario utilizado para recopilar los datos del nuevo paciente -->
         <form id="form" class="regcard">
             <h1>Crear cuenta</h1>
             <p class="sub">Completá tus datos para agendar turnos. Los campos con * son obligatorios.</p>
             
+            <!-- Grupo de campos correspondientes a la información personal -->
             <fieldset>
                 <legend>Datos personales</legend>
+
+                <!-- Organiza los campos en dos columnas -->
                 <div class="grid2">
                     <div class="field">
                         <label for="nombre">Nombre *</label>
                         <input id="nombre" name="nombre" type="text" required autocomplete="given-name">
                     </div>
+
                     <div class="field">
                         <label for="apellido">Apellido *</label>
                         <input id="apellido" name="apellido" type="text" required autocomplete="family-name">
                     </div>
+
                     <div class="field">
                         <label for="nac">Fecha de nacimiento *</label>
                         <input id="nac" name="nacimiento" type="date" min="1900-01-01" required>
                     </div>
+
                     <div class="field">
                         <span class="lbl">Género *</span>
+
+                        <!-- Permite seleccionar una sola opción entre las disponibles -->
                         <div class="radios">
                             <label><input type="radio" name="genero" value="Femenino" required> Femenino</label>
                             <label><input type="radio" name="genero" value="Masculino"> Masculino</label>
@@ -46,17 +72,23 @@
                 </div>
             </fieldset>
             
+            <!-- Grupo de campos destinados a los medios de contacto del paciente -->
             <fieldset>
                 <legend>Contacto</legend>
+
                 <div class="grid2">
                     <div class="field">
                         <label for="email">Correo electrónico *</label>
                         <input id="email" name="email" type="email" required autocomplete="email" placeholder="nombre@correo.com">
                     </div>
+
                     <div class="field">
                         <label for="tel">Teléfono *</label>
+
+                        <!-- Acepta números y algunos caracteres habituales en los teléfonos -->
                         <input id="tel" name="telefono" type="tel" required pattern="[0-9+\s\-()]{8,}" title="Mínimo 8 números" autocomplete="tel" placeholder="11 5555-0000">
                     </div>
+
                     <div class="field full">
                         <label for="dir">Dirección (opcional)</label>
                         <textarea id="dir" name="direccion" rows="2" autocomplete="street-address"></textarea>
@@ -64,31 +96,49 @@
                 </div>
             </fieldset>
             
+            <!-- Grupo de campos para establecer y confirmar la contraseña -->
             <fieldset>
                 <legend>Contraseña</legend>
+
                 <div class="grid2">
                     <div class="field">
                         <label for="pass">Contraseña * (mínimo 8 caracteres)</label>
+
                         <div class="pw">
+                            <!-- La contraseña se oculta inicialmente mientras se escribe -->
                             <input id="pass" type="password" minlength="8" required autocomplete="new-password">
+
+                            <!-- Permite mostrar u ocultar el contenido del campo -->
                             <button type="button" class="eye" aria-label="Mostrar contraseña" aria-pressed="false">👁</button>
                         </div>
                     </div>
+
                     <div class="field">
                         <label for="pass2">Repetir contraseña *</label>
+
                         <div class="pw">
+                            <!-- Campo para volver a ingresar la contraseña y comprobar que coincida -->
                             <input id="pass2" type="password" minlength="8" required autocomplete="new-password">
+
+                            <!-- Permite mostrar u ocultar el contenido del campo -->
                             <button type="button" class="eye" aria-label="Mostrar contraseña" aria-pressed="false">👁</button>
                         </div>
                     </div>
                 </div>
             </fieldset>
             
+            <!-- Espacio donde JavaScript muestra los errores que se produzcan durante el registro -->
             <p class="err" id="err" role="alert"></p>
+
+            <!-- Envía el formulario para validar los datos y solicitar la creación de la cuenta -->
             <button class="btn primary block" type="submit">Crear cuenta</button>
+
+            <!-- Información sobre las normas de privacidad aplicables al tratamiento de los datos -->
             <p class="center">Al registrarte aceptás las políticas de privacidad (Ley 25.326/Ley 26.529).</p>
         </form>
     </main>
+
+    <!-- Archivo JavaScript encargado de validar el formulario y comunicarse con el backend -->
     <script src="js/app.js"></script>
 </body>
 </html>
