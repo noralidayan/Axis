@@ -24,7 +24,7 @@ El proyecto fue desarrollado como una simulación de un sistema de turnos médic
 ## Funcionalidades principales
 
 - Registro de pacientes.
-- Inicio de sesión.
+- Inicio de sesión con credenciales registradas.
 - Consulta de especialidades médicas.
 - Consulta de profesionales.
 - Visualización de días y horarios disponibles.
@@ -57,7 +57,7 @@ Seguir estos pasos para iniciar el servidor de FastAPI.
 
 Abrir la carpeta del proyecto AXIS desde Visual Studio Code.
 
-Luego, abrir una terminal y ubicarse en la carpeta donde se encuentra el archivo `main.py`.
+Luego, abrir una terminal y ubicarse en la carpeta principal del proyecto, donde se encuentra el archivo `main.py`.
 
 Es importante ejecutar los siguientes comandos desde esa ubicación.
 
@@ -98,6 +98,7 @@ uvicorn main:app --reload
 ```
 
 Donde:
+
 - `main` hace referencia al archivo `main.py`.
 - `app` es la instancia de FastAPI definida dentro de ese archivo.
 - `--reload` permite reiniciar automáticamente el servidor cuando se realizan cambios en el código.
@@ -125,9 +126,10 @@ Desde allí se pueden consultar los endpoints disponibles, visualizar los parám
 Con el backend en funcionamiento, se debe abrir el frontend para utilizar la aplicación.
 
 1. Abrir la carpeta del proyecto en Visual Studio Code.
-2. Abrir el archivo `index.html` utilizando la extensión **Live Server**.
-3. El navegador abrirá la aplicación en una dirección local, generalmente `http://127.0.0.1:5500`.
-4. Mantener activa la terminal donde se está ejecutando FastAPI.
+2. Ingresar a la carpeta `static`.
+3. Abrir el archivo `index.html` utilizando la extensión **Live Server**.
+4. El navegador abrirá la aplicación en una dirección local, generalmente `http://127.0.0.1:5500`.
+5. Mantener activa la terminal donde se está ejecutando FastAPI.
 
 El frontend se comunica con el backend mediante solicitudes HTTP a la API.
 
@@ -135,36 +137,35 @@ El frontend se comunica con el backend mediante solicitudes HTTP a la API.
 
 ## Datos de prueba
 
-### Inicio de sesión
-
-Para probar el acceso al sistema:
-
-- **Correo electrónico:** cualquier correo no vacío.
-- **Contraseña:** cualquier contraseña no vacía.
-
-El inicio de sesión está simplificado para esta demostración y no realiza una autenticación real con credenciales previamente registradas.
-
 ### Registro de pacientes
 
-También se puede ingresar desde la opción de crear cuenta y completar el formulario con datos de prueba.
+Para utilizar el sistema por primera vez, es necesario crear una cuenta desde la opción **Registrarse** de la pantalla de inicio.
 
-Se deben completar los campos obligatorios para realizar el registro.
+Se debe completar el formulario con los datos solicitados. Una vez realizado el registro, el paciente podrá iniciar sesión utilizando el correo electrónico y la contraseña que ingresó al crear su cuenta.
 
-Una vez creada la cuenta, se puede utilizar el correo ingresado para acceder al sistema.
+### Inicio de sesión
+
+Para ingresar al sistema:
+
+- **Correo electrónico:** utilizar el correo registrado previamente.
+- **Contraseña:** utilizar la contraseña ingresada durante el registro.
+
+El sistema verifica que el paciente se encuentre registrado antes de permitir el acceso.
 
 ### Prueba de gestión de turnos
 
-Una vez dentro de la aplicación, se puede realizar el siguiente recorrido:
+Una vez registrado e iniciada la sesión, se puede realizar el siguiente recorrido:
 
-1. Iniciar sesión.
-2. Ingresar a la sección de solicitud de turnos.
-3. Seleccionar una especialidad médica.
-4. Elegir un profesional.
-5. Seleccionar una fecha disponible.
-6. Elegir un horario.
-7. Confirmar la solicitud.
-8. Consultar el turno desde la sección "Mis turnos".
-9. Probar las opciones de cancelación o reprogramación.
+1. Crear una cuenta desde la opción de registro.
+2. Iniciar sesión con las credenciales registradas.
+3. Ingresar a la sección de solicitud de turnos.
+4. Seleccionar una especialidad médica.
+5. Elegir un profesional.
+6. Seleccionar una fecha disponible.
+7. Elegir un horario.
+8. Confirmar la solicitud.
+9. Consultar el turno desde la sección "Mis turnos".
+10. Probar las opciones de cancelación o reprogramación.
 
 ## Almacenamiento de datos
 
@@ -183,29 +184,31 @@ AXIS/
 │
 ├── main.py
 ├── datos.json
+├── requirements.txt
+├── README.md
 │
-├── index.html
-├── registro.html
-├── panel.html
-├── perfil.html
-├── mis-turnos.html
-├── nuevo-turno.html
-│
-├── css/
-│   └── styles.css
-│
-├── js/
-│   └── app.js
-│
-└── img/
-    └── logo.png
+└── static/
+    ├── index.html
+    ├── registro.html
+    ├── panel.html
+    ├── perfil.html
+    ├── mis-turnos.html
+    ├── nuevo-turno.html
+    ├── confirmar.html
+    │
+    ├── css/
+    │   └── styles.css
+    │
+    ├── js/
+    │   └── app.js
+    │
+    └── img/
+        └── logo.png
 ```
-
-*La estructura es orientativa y puede variar según la organización final de los archivos.*
 
 ## Logo
 
-El logo de AXIS se encuentra en `img/logo.png`.
+El logo de AXIS se encuentra en `static/img/logo.png`.
 
 Para reemplazarlo, colocar la nueva imagen en esa misma ubicación, conservando el nombre `logo.png`.
 
@@ -214,7 +217,8 @@ Para reemplazarlo, colocar la nueva imagen en esa misma ubicación, conservando 
 - AXIS es un proyecto académico con un backend simulado.
 - Los datos se almacenan localmente en un archivo JSON.
 - No se utiliza una base de datos SQL.
-- La autenticación está simplificada y no implementa mecanismos de seguridad reales.
+- El inicio de sesión requiere que el paciente se encuentre previamente registrado.
+- La autenticación está simplificada y no implementa todos los mecanismos de seguridad necesarios para un entorno de producción.
 - No se deben utilizar datos personales reales ni contraseñas reales para las pruebas.
 - El servidor se ejecuta en un entorno local y está destinado a demostración y aprendizaje.
 
